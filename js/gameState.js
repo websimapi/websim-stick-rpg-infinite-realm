@@ -9,6 +9,9 @@ export const tiles = new Map();
 export let playerPos = { x: WORLD_SIZE/2, y: WORLD_SIZE/2 };
 export let cameraPos = { x: 0, y: 0 };
 
+// Pathfinding state
+export let currentPath = [];
+
 // Future expansion:
 // - Day/night cycle tracker
 // - Weather system state
