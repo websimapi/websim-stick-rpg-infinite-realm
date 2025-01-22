@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #1a1a1a;
+  font-family: monospace;
+}
+
+.game-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.world {
+  position: absolute;
+  transform-origin: center center;
+  transition: transform 0.1s linear;
+}
+
+.tile {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  transition: background-color 0.3s;
+}
+
+.player {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s;
+}
+
+.player .body {
+  stroke: #fff;
+  stroke-width: 3;
+  fill: none;
+}
+
+.ui {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.7);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.health-bar, .stamina-bar {
+  width: 200px;
+  height: 20px;
+  background: #444;
+  margin: 5px 0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.health-fill {
+  width: 100%;
+  height: 100%;
+  background: #e74c3c;
+  transition: width 0.3s;
+}
+
+.stamina-fill {
+  width: 100%;
+  height: 100%;
+  background: #3498db;
+  transition: width 0.3s;
+}

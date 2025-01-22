@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stick RPG: Infinite Realm</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/fastnoise-lite@0.0.1/FastNoiseLite.min.js"></script>
+  <script type="module" src="game.js"></script>
+</head>
+<body>
+  <div class="game-container">
+    <div class="world" data-world>
+      <svg class="player" data-player viewBox="0 0 100 100">
+        <path class="body" d="M50 20L50 60M50 30L30 40M50 30L70 40M50 60L40 80M50 60L60 80"/>
+        <circle cx="50" cy="20" r="5"/>
+      </svg>
+    </div>
+    
+    <div class="ui">
+      <div class="health-bar">
+        <div class="health-fill" data-health></div>
+      </div>
+      <div class="stamina-bar">
+        <div class="stamina-fill" data-stamina></div>
+      </div>
+    </div>
+  </div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
