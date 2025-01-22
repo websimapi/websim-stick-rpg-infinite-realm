@@ -27,6 +27,10 @@ export function movePlayer(dx, dy) {
     }
     
     stamina -= speed;
+    
+    // Add movement animation class
+    player.classList.add('moving');
+    setTimeout(() => player.classList.remove('moving'), 200);
   }
 }
 

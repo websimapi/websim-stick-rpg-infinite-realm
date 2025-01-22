@@ -1,16 +1,23 @@
 import { cameraPos, playerPos } from './gameState.js';
 
 const world = document.querySelector('[data-world]');
+const SMOOTH_FACTOR = 0.2;
 
 export function updateCamera() {
-  const screenX = window.innerWidth / 2;
-  const screenY = window.innerHeight / 2;
-  cameraPos.x = playerPos.x - screenX;
-  cameraPos.y = playerPos.y - screenY;
-  world.style.transform = `translate(${-cameraPos.x}px, ${-cameraPos.y}px)`;
+  // Calculate ideal camera position
+  const targetX = playerPos.x - window.innerWidth/2;
+  const targetY = playerPos.y - window.innerHeight/2;
+  
+  // Apply smooth dampening
+  cameraPos.x += (targetX - cameraPos.x) * SMOOTH_FACTOR;
+  cameraPos.y += (targetY - cameraPos.y) * SMOOTH_FACTOR;
+
+  // Apply with subpixel precision
+  world.style.transform = `translate(
+    ${-cameraPos.x.toFixed(2)}px,
+    ${-cameraPos.y.toFixed(2)}px
+  )`;
 }
 
-// Future expansion:
-// - Screen shake effect
-// - Zoom functionality
-// - Cinematic mode
+// Add responsive tracking
+window.addEventListener('resize', updateCamera);

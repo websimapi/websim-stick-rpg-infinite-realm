@@ -23,16 +23,16 @@ document.addEventListener('keydown', (e) => {
     case 'd': 
     case 'arrowright': movePlayer(speed, 0); break;
   }
-  updateCamera();
+  // Camera update now handled in game loop
 });
 
 // Initial positioning
 player.style.transform = `translate(${playerPos.x}px, ${playerPos.y}px)`;
 updateCamera();
 
-// TODO: Implement main game loop
-// function gameLoop() {
-//   Handle NPCs, weather, time progression
-//   requestAnimationFrame(gameLoop);
-// }
-// gameLoop();
+// Implement smooth game loop
+function gameLoop() {
+  updateCamera();
+  requestAnimationFrame(gameLoop);
+}
+gameLoop();
