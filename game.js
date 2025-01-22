@@ -1,3 +1,5 @@
+import FastNoiseLite from 'https://cdn.jsdelivr.net/npm/fastnoise-lite@0.0.2/+esm';
+
 const WORLD_SIZE = 3000;
 const CHUNK_SIZE = 8;
 const TILE_SIZE = 64;
