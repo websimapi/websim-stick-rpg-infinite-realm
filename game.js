@@ -31,6 +31,10 @@ document.addEventListener('keydown', (e) => {
 
 // Initial positioning
 player.style.transform = `translate(${playerPos.x}px, ${playerPos.y}px)`;
+
+// Set camera to immediately center on player
+cameraPos.x = playerPos.x - window.innerWidth/2;
+cameraPos.y = playerPos.y - window.innerHeight/2;
 updateCamera();
 
 // Add click-to-move handler
